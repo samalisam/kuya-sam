@@ -13,15 +13,15 @@ export default {
   name: 'theMainView',
   computed: {
     ...mapGetters({
-      lastRouteMetaIndexes: 'getLastRouteMetaIndexes' 
+      lastRouteMetaIndexes: 'getLastRouteMetaIndexes'
     }),
-    transitionName() {
+    transitionName() {
       let transition = '';
 
       let toRight = 'slide-to-right';
       let toLeft = 'slide-to-left';
 
-      if(this.lastRouteMetaIndexes.from < this.lastRouteMetaIndexes.to) {
+      if (this.lastRouteMetaIndexes.from < this.lastRouteMetaIndexes.to) {
         transition = toRight;
       } else {
         transition = toLeft;
@@ -34,7 +34,7 @@ export default {
       return transition;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
