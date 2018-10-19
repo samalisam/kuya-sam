@@ -27,6 +27,10 @@ export default {
         transition = toLeft;
       }
 
+      if(this.lastRouteMetaIndexes.from == this.lastRouteMetaIndexes.to) {
+        transition = 'fade';
+      }
+
       return transition;
     }
   }
@@ -45,6 +49,9 @@ export default {
   transition-duration: 0.5s;
 }
 
+.fade-enter {
+  opacity: 0;
+}
 .slide-to-right-enter,
 .slide-to-left-leave-to {
   opacity: 0;
@@ -53,8 +60,13 @@ export default {
 .slide-to-right-enter-active,
 .slide-to-right-leave-active,
 .slide-to-left-enter-active,
-.slide-to-left-leave-active {
+.slide-to-left-leave-active,
+.fade-enter-active,
+.fade-leave-active {
   @include transitionValues();
+}
+.fade-leave-to {
+  opacity: 0;
 }
 .slide-to-right-leave-to,
 .slide-to-left-enter {
