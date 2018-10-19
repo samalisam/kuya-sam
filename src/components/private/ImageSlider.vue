@@ -1,16 +1,21 @@
 <template>
   <div class="image-slider">
     <div class="slider-container">
-      <div class="slider-item">1</div>
-      <div class="slider-item">2</div>
-      <div class="slider-item">3</div>
-      <div class="slider-item">4</div>
-      <div class="slider-item">5</div>
-      <div class="slider-item">6</div>
-      <div class="slider-item">7</div>
-      <div class="slider-item">8</div>
-      <div class="slider-item">9</div>
-      <div class="slider-item">10</div>
+      <div class="slider-item">
+        <img class="slider-item-image" src="../../assets/vertical-01.jpg" />
+      </div>
+      <div class="slider-item">
+        <img class="slider-item-image" src="../../assets/horizontal-01.jpg" />
+      </div>
+      <div class="slider-item">
+        <img class="slider-item-image" src="../../assets/horizontal-01.jpg" />
+      </div>
+      <div class="slider-item">
+        <img class="slider-item-image" src="../../assets/horizontal-01.jpg" />
+      </div>
+      <div class="slider-item">
+        <img class="slider-item-image" src="../../assets/horizontal-01.jpg" />
+      </div>
     </div>
   </div>
 </template>
@@ -23,14 +28,29 @@ export default {
 
 <style lang="scss" scoped>
 .image-slider {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-color: red;
 }
 
 .slider-container {
-}
+  position: absolute;
+  display: flex;
+  height: 100%;
 
-.slider-item {
-  height: 200px;
-  border: 1px solid black;
-  background-color: aquamarine;
+  .slider-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    border: 1px solid black;
+
+    & > img.slider-item-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
 }
 </style>
