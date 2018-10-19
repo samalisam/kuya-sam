@@ -1,16 +1,16 @@
 <template>
   <div class="image-slider">
     <div class="slider-container">
-      <div class="slider-items">1</div>
-      <div class="slider-items">2</div>
-      <div class="slider-items">3</div>
-      <div class="slider-items">4</div>
-      <div class="slider-items">5</div>
-      <div class="slider-items">6</div>
-      <div class="slider-items">7</div>
-      <div class="slider-items">8</div>
-      <div class="slider-items">9</div>
-      <div class="slider-items">10</div>
+      <div class="slider-item">1</div>
+      <div class="slider-item">2</div>
+      <div class="slider-item">3</div>
+      <div class="slider-item">4</div>
+      <div class="slider-item">5</div>
+      <div class="slider-item">6</div>
+      <div class="slider-item">7</div>
+      <div class="slider-item">8</div>
+      <div class="slider-item">9</div>
+      <div class="slider-item">10</div>
     </div>
   </div>
 </template>
@@ -26,5 +26,11 @@ export default {
 }
 
 .slider-container {
+}
+
+.slider-item {
+  height: 200px;
+  border: 1px solid black;
+  background-color: aquamarine;
 }
 </style>
