@@ -1,5 +1,5 @@
 <template>
-  <div class="mainview">
+  <div class="mainview add-spacing">
     <transition :name="transitionName" mode="out-in">
       <slot></slot>
     </transition>
@@ -38,11 +38,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mainview {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-}
-
 @mixin transitionValues() {
   transition-timing-function: ease-out;
   transition-property: opacity, transform;
