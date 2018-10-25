@@ -27,7 +27,7 @@ export default {
         transition = toLeft;
       }
 
-      if(this.lastRouteMetaIndexes.from == this.lastRouteMetaIndexes.to) {
+      if (this.lastRouteMetaIndexes.from == this.lastRouteMetaIndexes.to) {
         transition = 'fade';
       }
 
@@ -41,7 +41,7 @@ export default {
 @mixin transitionValues() {
   transition-timing-function: ease-out;
   transition-property: opacity, transform;
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
 }
 
 .fade-enter {
