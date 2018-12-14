@@ -6,5 +6,7 @@
     <KuyaRow />
     <KuyaColumn />
     <KuyaButton />
+    <KuyaNavigation />
+    <KuyaHero />
   </div>
 </template>
