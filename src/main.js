@@ -6,6 +6,9 @@ import store from './store'
 // Register layout components
 import './components'
 
+// Styles
+import './styles/normalize.css'
+
 new Vue({
   router,
   store,
