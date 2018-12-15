@@ -1,0 +1,7 @@
+@import '../../settings/variables.scss';
+
+.container {
+ @media #{map-get($display-breakpoints, sm-only)} {
+   color: red;
+ }
+}

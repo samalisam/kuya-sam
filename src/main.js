@@ -7,7 +7,7 @@ import store from './store'
 import './components'
 
 // Styles
-import './styles/normalize.css'
+import './styles/main.scss'
 
 new Vue({
   router,

@@ -1,9 +1,11 @@
 {
   "editor.tabSize": 2,
   "editor.useTabStops": false,
-  "editor.formatOnSave": true,
   "prettier.semi": false,
-  "prettier.singleQuote": true,
   "prettier.eslintIntegration": true,
-  "vetur.format.defaultFormatter.html": "none"
+  "vetur.format.defaultFormatter.html": "none",
+  "prettier.singleQuote": true,
+  "prettier.useTabs": false,
+  "eslint.alwaysShowStatus": true,
+  "eslint.run": "onSave"
 }
