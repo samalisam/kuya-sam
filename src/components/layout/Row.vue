@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="row"
-    :style="styling"
-  >
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -10,23 +7,18 @@
 <script>
 export default {
   props: {
-    isMobile: {
+    isVertical: {
       type: Boolean,
       default: false
     }
   },
   computed: {
-    styling() {
+    classes() {
       return {
-        'flex-direction': this.isMobile ? 'column' : 'row'
+        'row': true,
+        'is-vertical': this.isVertical
       }
     }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.row {
-  display: flex;
-}
-</style>

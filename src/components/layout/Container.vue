@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="container"
-    :style="styling"
-  >
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -10,24 +7,28 @@
 <script>
 export default {
   props: {
-    spacing: {
-      type: String,
-      default: "5em"
-    }
+    isBorderless: {
+      type: Boolean,
+      default: false,
+    },
+    isSpaced: {
+      type: Boolean,
+      default: false,
+    },
+    isFullscreen: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
-    styling() {
+    classes() {
       return {
-        margin: `0 ${this.spacing}`
+        'container': true,
+        'is-borderless': this.isBorderless,
+        'is-spaced': this.isSpaced,
+        'is-fullscreen': this.isFullscreen,
       }
     }
   }
 }
 </script>
-
-
-<style lang="scss" scoped>
-.container {
-  display: block;
-}
-</style>

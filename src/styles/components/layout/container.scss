@@ -1,7 +1,16 @@
-@import '../../settings/variables.scss';
+@import '../../settings/responsive.scss';
 
 .container {
- @media #{map-get($display-breakpoints, sm-only)} {
-   color: red;
- }
+  display: block;
+  margin: 0px 2em;
+
+  &.is-fullscreen {
+    height: 100vh;
+  }
+  &.is-spaced {
+    margin: 2em 0px;
+  }
+  &.is-borderless {
+    margin: 0;
+  }
 }

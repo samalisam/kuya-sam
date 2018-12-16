@@ -1,0 +1,72 @@
+$grid-breakpoints: (
+  sm: 600px,
+  md: 960px,
+  lg: (1280px - 16px),
+  xl: (1920px - 16px)
+);
+
+@mixin xs-only {
+  @media only screen and (max-width: map-get($grid-breakpoints, sm) - 1) {
+    @content;
+  }
+}
+
+@mixin sm-only {
+  @media only screen and (min-width: map-get($grid-breakpoints, sm)) and (max-width: map-get($grid-breakpoints, md) - 1) {
+    @content;
+  }
+}
+
+@mixin sm-and-up {
+  @media only screen and (min-width: map-get($grid-breakpoints, sm)) {
+    @content;
+  }
+}
+
+@mixin sm-and-down {
+  @media only screen and (max-width: map-get($grid-breakpoints, sm) - 1) {
+    @content;
+  }
+}
+
+@mixin md-only {
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) and (max-width: map-get($grid-breakpoints, lg) - 1) {
+    @content;
+  }
+}
+
+@mixin md-and-up {
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    @content;
+  }
+}
+
+@mixin md-and-down {
+  @media only screen and (max-width: map-get($grid-breakpoints, md) - 1) {
+    @content;
+  }
+}
+
+@mixin lg-only {
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) and (max-width: map-get($grid-breakpoints, xl) - 1) {
+    @content;
+  }
+}
+
+@mixin lg-and-up {
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+    @content;
+  }
+}
+
+@mixin lg-and-down {
+  @media only screen and (max-width: map-get($grid-breakpoints, lg) - 1) {
+    @content;
+  }
+}
+
+@mixin xl-only {
+  @media only screen and (min-width: map-get($grid-breakpoints, xl) - 1) {
+    @content;
+  }
+}

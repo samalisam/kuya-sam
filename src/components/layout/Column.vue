@@ -1,11 +1,18 @@
 <template>
-  <div class="column">
+  <div :class="classes">
     <slot></slot>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.column {
-  flex: 1;
+<script>
+export default {
+  props: {},
+  computed: {
+    classes() {
+      return {
+        'column': true,
+      }
+    }
+  }
 }
-</style>
+</script>
