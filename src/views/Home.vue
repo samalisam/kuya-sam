@@ -2,10 +2,19 @@
   <div class="home">
     <div>home</div>
     <KuyaContainer>
-      <KuyaRow is-mobile>
-        <KuyaColumn>First</KuyaColumn>
-        <KuyaColumn>Second</KuyaColumn>
-        <KuyaColumn>Third</KuyaColumn>
+      <KuyaRow>
+        <KuyaColumn column="1">
+          Second
+        </KuyaColumn>
+        <KuyaColumn column="1">
+          Second
+        </KuyaColumn>
+        <KuyaColumn column="1">
+          Second
+        </KuyaColumn>
+        <KuyaColumn>
+          Second
+        </KuyaColumn>
       </KuyaRow>
     </KuyaContainer>
   </div>

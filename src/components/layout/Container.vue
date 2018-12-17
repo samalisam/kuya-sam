@@ -1,5 +1,8 @@
 <template>
-  <div :class="classes">
+  <div
+    class="container"
+    :class="classes"
+  >
     <slot></slot>
   </div>
 </template>
@@ -7,7 +10,7 @@
 <script>
 export default {
   props: {
-    isBorderless: {
+    isMarginless: {
       type: Boolean,
       default: false,
     },
@@ -23,8 +26,7 @@ export default {
   computed: {
     classes() {
       return {
-        'container': true,
-        'is-borderless': this.isBorderless,
+        'is-marginless': this.isMarginless,
         'is-spaced': this.isSpaced,
         'is-fullscreen': this.isFullscreen,
       }

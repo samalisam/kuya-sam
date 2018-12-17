@@ -3,8 +3,9 @@
 .row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 
-  &.is-vertical {
+  &.is-mobile {
     flex-direction: column;
   }
 }

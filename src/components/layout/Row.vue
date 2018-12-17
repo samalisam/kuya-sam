@@ -1,5 +1,8 @@
 <template>
-  <div :class="classes">
+  <div
+    class="row"
+    :class="classes"
+  >
     <slot></slot>
   </div>
 </template>
@@ -7,7 +10,7 @@
 <script>
 export default {
   props: {
-    isVertical: {
+    isMobile: {
       type: Boolean,
       default: false
     }
@@ -15,8 +18,7 @@ export default {
   computed: {
     classes() {
       return {
-        'row': true,
-        'is-vertical': this.isVertical
+        'is-mobile': this.isMobile
       }
     }
   }
