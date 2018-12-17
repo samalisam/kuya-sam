@@ -10,13 +10,13 @@
 <script>
 export default {
   props: {
-    isMarginless: {
+    isVerticallySpaced: {
       type: Boolean,
       default: false,
     },
-    isSpaced: {
+    isHorizontallySpaced: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     isFullscreen: {
       type: Boolean,
@@ -26,8 +26,8 @@ export default {
   computed: {
     classes() {
       return {
-        'is-marginless': this.isMarginless,
-        'is-spaced': this.isSpaced,
+        'is-vertically-spaced': this.isVerticallySpaced,
+        'is-horizontally-spaced': this.isHorizontallySpaced,
         'is-fullscreen': this.isFullscreen,
       }
     }

@@ -1,0 +1,14 @@
+@import '../../settings/responsive.scss';
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+
+  .navigation-item {
+    padding: 1em 2em;
+    
+    &:first-child {
+      margin-right: auto;
+    }
+  }
+}

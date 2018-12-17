@@ -1,19 +1,10 @@
 <template>
   <div class="home">
-    <div>home</div>
-    <KuyaContainer>
+    <KuyaContainer is-vertically-spaced>
       <KuyaRow>
-        <KuyaColumn column="1">
-          Second
-        </KuyaColumn>
-        <KuyaColumn column="1">
-          Second
-        </KuyaColumn>
-        <KuyaColumn column="1">
-          Second
-        </KuyaColumn>
         <KuyaColumn>
-          Second
+          <h1>I'm Sam</h1>
+          <h2>And this is a small gathering of the stuff I do.</h2>
         </KuyaColumn>
       </KuyaRow>
     </KuyaContainer>

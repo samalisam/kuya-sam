@@ -2,15 +2,29 @@
 
 .container {
   display: block;
-  margin: 0px 2em;
+  margin: 0;
+  padding: 0;
 
   &.is-fullscreen {
     height: 100vh;
   }
-  &.is-spaced {
-    margin: 2em 0px;
+  &.is-horizontally-spaced {
+    margin-left: 8em;
+    margin-right: 8em;
+    
+    @include md-and-down {
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+    @include sm-and-down {
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
   }
-  &.is-marginless {
-    margin: 0;
+  &.is-vertically-spaced {
+    padding-top: 12em;
+    padding-bottom: 12em;
   }
+
+
 }
