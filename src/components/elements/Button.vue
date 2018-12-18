@@ -1,3 +1,11 @@
 <template>
-  <div>Button</div>
+  <button class="button is-primary">
+    <slot></slot>
+  </button>
 </template>
+
+<script>
+export default {
+  name: 'KButton'
+}
+</script>

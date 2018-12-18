@@ -1,0 +1,15 @@
+@import '../../settings/_settings.scss';
+
+.button {
+  border: none;
+  padding: 0.5em 1em;
+
+  &.is-primary {
+    background-color: $primary;
+    color: $text-inv;
+
+    &:hover {
+      background-color: $primary-sat;
+    }
+  }
+}

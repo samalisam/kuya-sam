@@ -1,12 +1,18 @@
 <template>
   <div class="home">
-    <KuyaContainer is-vertically-spaced>
-      <KuyaRow>
-        <KuyaColumn>
-          <h1>I'm Sam</h1>
-          <h2>And this is a small gathering of the stuff I do.</h2>
-        </KuyaColumn>
-      </KuyaRow>
-    </KuyaContainer>
+    <KContainer>
+      <div class="inner-container">
+        <h1>I shoot photos</h1>
+        <p>But wait, that's not all.</p>
+        <KButton>Check out the full gallery</KButton>
+      </div>
+      <div class="inner-gallery">
+        <div class="gallery-item">Test-Item</div>
+      </div>
+    </KContainer>
   </div>
 </template>
+
+<style lang="scss">
+
+</style>

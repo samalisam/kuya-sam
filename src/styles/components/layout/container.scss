@@ -1,30 +1,35 @@
-@import '../../settings/responsive.scss';
+@import '../../settings/_settings.scss';
 
 .container {
-  display: block;
-  margin: 0;
-  padding: 0;
+  background-color: $white;
 
-  &.is-fullscreen {
-    height: 100vh;
+  @include sm-and-up {
+    margin: 0;
   }
-  &.is-horizontally-spaced {
-    margin-left: 8em;
-    margin-right: 8em;
-    
-    @include md-and-down {
-      margin-left: 2em;
-      margin-right: 2em;
+  @include md-and-up {
+    margin-top: 2em;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    margin-left: 4em;
+  }
+  @include lg-and-up {
+    margin-top: 12em;
+    margin-right: 12em;
+    margin-bottom: 12em;
+    margin-left: 6em;
+  }
+
+  .inner-container {
+    background-color: $gray;
+
+    @include sm-and-up {
+      padding: 1em 0.5em;
     }
-    @include sm-and-down {
-      margin-left: 0.5em;
-      margin-right: 0.5em;
+    @include md-and-up {
+      padding: 4em 2em;
+    }
+    @include lg-and-up {
+      padding: 8em 4em;
     }
   }
-  &.is-vertically-spaced {
-    padding-top: 12em;
-    padding-bottom: 12em;
-  }
-
-
 }

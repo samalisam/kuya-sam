@@ -1,6 +1,4 @@
 import Vue from 'vue'
-import last from 'lodash/last'
-import first from 'lodash/first'
 
 const requireComponent = require.context(
   '../components', // component relativ folder path
@@ -9,12 +7,10 @@ const requireComponent = require.context(
 )
 
 requireComponent.keys().forEach(path => {
-  const component = last(path.split('/'))
   const componentConfig = requireComponent(path)
-  const componentName = first(component.split('.'))
 
   Vue.component(
-    `Kuya${componentName}`,
+    componentConfig.default.name,
     componentConfig.default || componentConfig
   )
 })

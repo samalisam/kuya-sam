@@ -1,5 +1,0 @@
-<template>
-  <div class="navigation">
-    <slot></slot>
-  </div>
-</template>
