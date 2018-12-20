@@ -1,35 +1,77 @@
 @import '../../settings/_settings.scss';
 
 .container {
+  position: relative;
   background-color: $white;
 
-  @include sm-and-up {
+  @include md-and-down {
     margin: 0;
   }
   @include md-and-up {
-    margin-top: 2em;
-    margin-right: 2em;
-    margin-bottom: 2em;
-    margin-left: 4em;
+    margin: 2em;
   }
   @include lg-and-up {
     margin-top: 12em;
-    margin-right: 12em;
+    margin-right: 25vw;
     margin-bottom: 12em;
-    margin-left: 6em;
+    margin-left: 4em;
   }
 
-  .inner-container {
+  .content {
     background-color: $gray;
 
-    @include sm-and-up {
+    @include md-and-down {
       padding: 1em 0.5em;
+      height: auto;
     }
     @include md-and-up {
       padding: 4em 2em;
     }
     @include lg-and-up {
-      padding: 8em 4em;
+      padding: 200px 4em;
+      height: 300px;
+    }
+  }
+
+  .gallery {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 8em);
+    height: 100%;
+    
+    @include lg-and-down {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .inner-gallery {
+      width: 600px;
+      height: 400px;
+      overflow-x: scroll;
+      display: flex;
+      flex-shrink: 0;
+    
+      @include lg-and-down {
+        width: 100%;
+      }
+      @include lg-and-up {
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+      }
+
+      .gallery-img {
+        display: block;
+
+        & > img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
     }
   }
 }
