@@ -40,11 +40,14 @@
           </div>
         </div>
         <div class="gallery-indexer">
-          <div class="index-element"></div>
-          <div class="index-element"></div>
-          <div class="index-element"></div>
-          <div class="index-element"></div>
-          <div class="index-element"></div>
+          <div
+            v-for="(i, index) in 5"
+            :key="index"
+            :class="{active: index == galleryIndex }"
+            class="index-element"
+            @click="scroll(index, true)"
+          >
+          </div>
         </div>
       </div>
     </KContainer>
@@ -56,13 +59,37 @@ export default {
   data() {
     return {
       galleryIndex: 0,
-      gallery: null
+      gallery: null,
+      intervalId: null
     }
   },
   mounted() {
     this.gallery = this.$refs.innerGallery
-    let interval = 6000
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
+      this.intervalScrolling()
+    }, 2000)
+  },
+  methods: {
+    scroll(imageIndex, force) {
+      if(force) {
+        this.galleryIndex = imageIndex
+        clearInterval(this.intervalId)
+        setTimeout(() => {
+          this.intervalId = setInterval(() => {
+            this.intervalScrolling()
+          }, 2000)
+        }, 10000);
+      }
+      
+      let galleryWidth = this.gallery.clientWidth
+      let galleryPosition = galleryWidth * imageIndex
+
+      this.gallery.scrollTo({
+        left: galleryPosition,
+        behavior: 'smooth'
+      })
+    },
+    intervalScrolling() {
       if(this.gallery != null) {
         let imagesInGallery = 4
 
@@ -74,17 +101,6 @@ export default {
 
         this.scroll(this.galleryIndex)
       }
-    }, interval);
-  },
-  methods: {
-    scroll(imageIndex) {
-      let galleryWidth = this.gallery.clientWidth
-      let galleryPosition = galleryWidth * imageIndex
-
-      this.gallery.scrollTo({
-        left: galleryPosition,
-        behavior: 'smooth'
-      })
     }
   }
 }

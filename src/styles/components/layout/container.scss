@@ -36,8 +36,9 @@
   .gallery {
     position: absolute;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
     top: 0;
     left: 0;
     width: calc(100vw - 8em);
@@ -53,7 +54,7 @@
     .inner-gallery {
       width: 600px;
       height: 400px;
-      overflow-x: scroll;
+      overflow: hidden;
       display: -webkit-inline-box;
     
       @include lg-and-down {
@@ -75,6 +76,28 @@
             max-width: 100%;
             max-height: 100%;
           }
+        }
+      }
+    }
+
+    .gallery-indexer {
+      width: 600px;
+      margin-top: 0.5em;
+      height: 10px;
+      display: flex;
+      justify-content: space-between;
+
+      @include lg-and-down {
+        width: 100%;
+      }
+
+      .index-element {
+        background-color: $primary-desat;
+        width: calc(20% - 0.5em);
+        height: 10px;
+
+        &.active {
+          background-color: $primary;
         }
       }
     }
