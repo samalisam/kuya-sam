@@ -17,7 +17,7 @@
     margin-left: 4em;
   }
 
-  .content {
+  .container-content {
     background-color: $gray;
 
     @include md-and-down {
@@ -50,56 +50,65 @@
       justify-content: center;
       width: 100%;
     }
+  }
+}
 
-    .inner-gallery {
-      width: 600px;
-      height: 400px;
-      overflow: hidden;
-      display: -webkit-inline-box;
-    
-      @include lg-and-down {
-        width: 100%;
-      }
+  .carousel {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    display: -webkit-inline-box;
+  
+    @include lg-and-down {
+      width: 100%;
+    }
 
-      .gallery-img {
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+
+      .img-placeholder {
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
 
-        .img-placeholder {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-content: center;
-
-          & > img {
-            max-width: 100%;
-            max-height: 100%;
-          }
+        & > img {
+          max-width: 100%;
+          max-height: 100%;
         }
       }
     }
+  }
 
-    .gallery-indexer {
-      width: 600px;
-      margin-top: 0.5em;
-      height: 10px;
-      display: flex;
-      justify-content: space-between;
+.carousel-indexer {
+  width: 600px;
+  margin-top: 0.5em;
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
 
-      @include lg-and-down {
-        width: 100%;
-      }
+  @include lg-and-down {
+    width: 100%;
+  }
 
-      .index-element {
-        background-color: $primary-desat;
-        width: calc(20% - 0.5em);
-        height: 10px;
+  .index-element {
+    background-color: $primary-desat;
+    height: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 
-        &.active {
-          background-color: $primary;
-        }
-      }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active {
+      background-color: $primary;
     }
   }
 }
