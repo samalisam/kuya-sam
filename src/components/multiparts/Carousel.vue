@@ -14,6 +14,13 @@
         </div>
       </div>
     </div>
+    <div class="timeout-line">
+      <div
+        ref="timeout"
+        class="timeout-element"
+      >
+      </div>
+    </div>
     <div class="carousel-indexer">
       <div
         v-for="(num, index) in imageLength"
@@ -28,12 +35,14 @@
 </template>
 
 <script>
+import anime from 'animejs'
+
 export default {
   name: 'KCarousel',
   props: {
     interval: {
       type: Number,
-      default: 2000
+      default: 3500
     },
     timeout: {
       type: Number,
@@ -52,7 +61,9 @@ export default {
     return {
       galleryIndex: 0,
       gallery: null,
-      intervalId: null
+      timeoutLine: null,
+      intervalId: null,
+      timeoutId: null
     }
   },
   computed: {
@@ -62,12 +73,13 @@ export default {
   },
   mounted() {
     this.gallery = this.$refs.carousel
-    console.log(this.gallery);
-    
+    this.timeoutLine = this.$refs.timeout
 
     this.intervalId = setInterval(() => {
       this.scrollNext()
-    }, this.interval);
+    }, this.interval)
+
+    this.startTimeoutline(this.interval)
   },
   methods: {
     getImagePath(name) {
@@ -90,13 +102,21 @@ export default {
       this.scrollToIndex(true)
     },
     scrollToIndex(force) {
+      let animdur = this.interval
+
       if(force) {
         clearInterval(this.intervalId)
-        setTimeout(() => {
+        if(this.timeoutId) {
+          clearTimeout(this.timeoutId)
+        }
+
+        this.timeoutId = setTimeout(() => {
           this.intervalId = setInterval(() => {
             this.scrollNext()
-          }, this.interval);
-        }, this.timeout);
+          }, this.interval)
+        }, this.timeout)
+
+        animdur = this.timeout
       }
 
       let galleryWidth = this.gallery.clientWidth
@@ -106,6 +126,18 @@ export default {
         left: galleryPosition,
         behavior: 'smooth'
       })
+
+      this.startTimeoutline(animdur)
+    },
+    startTimeoutline(dur) {
+      let animation = {
+        targets: this.timeoutLine,
+        width: ['0%', '100%'],
+        easing: 'linear',
+        duration: dur
+      }
+
+      anime(animation)
     }
   }
 }
